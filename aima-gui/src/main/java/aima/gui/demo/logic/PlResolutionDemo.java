@@ -13,11 +13,13 @@ public class PlResolutionDemo {
 
 	public static void main(String[] args) {
 		KnowledgeBase kb = new KnowledgeBase();
-		String fact = "(B11 => ~P11) & B11)";
+		String fact = "~JP & ~JM & ~SM & (JP | JK | JM) & (SP | SK | SM) & (CP | CK | CM) & (JP | SP | CP) & (JM | SM | CM) & (JK | SK | CK ) & (JP & SM & CK) & (JM & SK & CP) | (JK & SP & CM)";
 		kb.tell(fact);
 		System.out.println("\nPlResolutionDemo\n");
 		System.out.println("adding " + fact + "to knowldegebase");
-		displayResolutionResults(kb, "~B11");
+ 		displayResolutionResults(kb, "JK");
+		displayResolutionResults(kb, "SP");
+		displayResolutionResults(kb, "CM");
 	}
 
 	private static void displayResolutionResults(KnowledgeBase kb, String query) {
